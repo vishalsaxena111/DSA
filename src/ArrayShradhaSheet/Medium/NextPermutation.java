@@ -1,4 +1,4 @@
-package ArrayShradhaSheet.Easy;
+package ArrayShradhaSheet.Medium;
 
 public class NextPermutation {
 
