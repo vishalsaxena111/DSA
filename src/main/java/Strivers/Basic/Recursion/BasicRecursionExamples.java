@@ -3,7 +3,7 @@ package Strivers.Basic.Recursion;
 public class BasicRecursionExamples {
     public static void main(String[] args) {
 
-        System.out.println( sumOfN(6));
+        fib(6);
     }
 
     // sum of n numbers
@@ -20,6 +20,26 @@ public class BasicRecursionExamples {
         sum = sum + i;
 
         return helper(i+1, n, sum);
+
+    }
+
+
+    // fibbnocci series
+    public static void fib(int n){
+
+        System.out.print("0 1 ");
+        helperfib(1, n, 0, 1);
+
+    }
+
+    public static void helperfib(int i, int n, int pre, int curr){
+
+        if(i>n)
+            return;
+
+        System.out.print((pre +  curr)+ " ");
+
+        helperfib(i+1, n, curr, (pre+curr));
 
     }
 }

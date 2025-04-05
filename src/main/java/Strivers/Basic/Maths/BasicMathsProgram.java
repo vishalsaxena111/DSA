@@ -1,4 +1,4 @@
-package Strivers.Maths;
+package Strivers.Basic.Maths;
 
 import java.util.ArrayList;
 
