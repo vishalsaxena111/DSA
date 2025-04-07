@@ -3,36 +3,30 @@ package learn.DSA;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-import java.util.Stack;
+import java.util.*;
 
 @SpringBootApplication
 public class DsaApplication {
 
 	public static void main(String[] args) {
-		String s="(()())(())(()(()))";
-		Stack<Character> st = new Stack();
-		char[] c = s.toCharArray();
 
-		for(int i=0; i<c.length; i++){
-			if(st.isEmpty())
-				st.push(c[i]);
-			else{
-				System.out.println("i"+i+" "+c[i]+" "+st.peek());
-				if(c[i]==st.peek()) {
-					st.pop();
-					st.push(c[i]);
-					//continue;
-				}else st.push(c[i]);
+		int[] arr = {2, 2, 4 ,2};
+		Map<Integer, Integer> map = new HashMap<>();
 
-			}
-
-			StringBuilder sb = new StringBuilder();
-			for(char ct: st)
-				sb.append(ct);
-
+		for(int i=0; i<arr.length; i++){
+			if(map.containsKey(arr[i]))
+				map.put(arr[i], map.get(arr[i])+1);
+			else
+				map.put(arr[i], 1);
+			System.out.println(map);
 		}
 
-		System.out.println(st);
+		List<Integer> res = new ArrayList<>();
+		for(int i =1; i<= arr.length; i++){
+			res.add(map.getOrDefault(i,0));
+		}
+
+		System.out.println( res);
 
 		//SpringApplication.run(DsaApplication.class, args);
 	}
