@@ -1,6 +1,6 @@
 package learn.DSA.LearnLinkedList;
 
-public class LinkedList {
+public  class LinkedList {
 
     Node head; // head of list
 
@@ -86,28 +86,53 @@ public class LinkedList {
     public static void main(String[] args)
     {
 
-        /* Start with the empty list. */
-        LinkedList list = new LinkedList();
+//        /* Start with the empty list. */
+//        LinkedList list = new LinkedList();
+//
+//        //
+//        // ******INSERTION******
+//        //
+//
+//        list.printList();
+//        // Insert the values
+//        list = list.insert(list, 1);
+//        list = list.insert(list, 2);
+//        list = list.insert(list, 3);
+//        list = list.insert(list, 4);
+//        list = list.insert(list, 5);
+//        list = list.insert(list, 6);
+//        list = list.insert(list, 7);
+//        list = list.insert(list, 8);
+//
+//        list = list.addFirst(list, 11);
+//
+//
+//        // Print the LinkedList
+//        list.printList();
 
-        //
-        // ******INSERTION******
-        //
 
-        list.printList();
-        // Insert the values
-        list = list.insert(list, 1);
-        list = list.insert(list, 2);
-        list = list.insert(list, 3);
-        list = list.insert(list, 4);
-        list = list.insert(list, 5);
-        list = list.insert(list, 6);
-        list = list.insert(list, 7);
-        list = list.insert(list, 8);
+       // LinkedList.Node node =  new Node(1);
 
-        list = list.addFirst(list, 11);
-
-
-        // Print the LinkedList
-        list.printList();
     }
+
+
+    public boolean hasCycle(LinkedList.Node head) {
+
+
+        LinkedList.Node slow=head;
+
+        while(slow!=null && slow.next!=null){
+            slow = slow.next;
+            LinkedList.Node fast = slow.next.next;
+            if(fast==null)
+                break;
+
+            if(slow.data==fast.data)
+                return true;
+        }
+
+        return false;
+
+    }
+
 }

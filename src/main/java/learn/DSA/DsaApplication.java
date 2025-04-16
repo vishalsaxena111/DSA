@@ -10,23 +10,20 @@ public class DsaApplication {
 
 	public static void main(String[] args) {
 
-		int[] arr = {2, 2, 4 ,2};
-		Map<Integer, Integer> map = new HashMap<>();
+		int[] arr = {10, 5, 10};
+		int max= arr[0];
+		int secondMax = arr[1];
+		for(int i=2; i < arr.length; i++){
+			if(max< arr[i])
+				max = arr[i];
 
-		for(int i=0; i<arr.length; i++){
-			if(map.containsKey(arr[i]))
-				map.put(arr[i], map.get(arr[i])+1);
-			else
-				map.put(arr[i], 1);
-			System.out.println(map);
+			if(secondMax< arr[i])
+				secondMax= arr[i];
 		}
 
-		List<Integer> res = new ArrayList<>();
-		for(int i =1; i<= arr.length; i++){
-			res.add(map.getOrDefault(i,0));
-		}
+		System.out.println( max > secondMax ? secondMax : max);
 
-		System.out.println( res);
+		//System.out.println( res);
 
 		//SpringApplication.run(DsaApplication.class, args);
 	}
