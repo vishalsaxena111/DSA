@@ -23,6 +23,10 @@ public class BubbleSortExample {
     }
 
     public static void swap(int[] arr, int first, int second){
+
+        if(first==second){
+            return;
+        }
         int temp = arr[first];
         arr[first] = arr[second];
         arr[second]= temp;

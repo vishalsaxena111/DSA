@@ -62,7 +62,7 @@ class Stack{
 
 public class StackUsingArray {
 
-    public static void main(String[] args) {
+    public static void main(String[] args)throws ClassNotFoundException {
         Stack stack = new Stack(5);
 
         stack.push(2);
